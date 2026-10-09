@@ -1,0 +1,393 @@
+==============================================================================
+Chapter 1 - A Macro Materials Framework: full numerical reproduction
+==============================================================================
+
+1. CALIBRATION RECONSTRUCTED FROM SOURCE DATA (Appendix A)
+----------------------------------------------------------
+  Zinc, 1980-2019, rebuilt from zinc_dataset_ORIGINAL.xlsx
+    mean usable supply <S>, Mt/yr                     11.8155   printed      11.82  ok 
+    mean primary refining <P>, Mt/yr                   8.6981   printed      8.698  ok 
+    OLS slope psi                                      0.6127   printed      0.613  ok 
+    OLS intercept Pbar, Mt/yr                          1.4593   printed      1.459  ok 
+    mean inventory term <xi>, Mt/yr                    0.1444   printed      0.144  ok 
+    autonomous supply Sbar, Mt/yr                      1.6037   printed      1.604  ok 
+    autonomous supply sbar, kg/cap/yr                  0.2625   printed      0.262  ok 
+    autonomous primary pbar, kg/cap/yr                 0.2389   printed      0.239  ok 
+    depreciation lambda                                0.0375   printed     0.0375  ok 
+    fabrication loss sigma                             0.1792   printed      0.179  ok 
+    durable share kappa                                0.9834   printed      0.983  ok 
+    recycling coefficient rho_0                        0.3629   printed      0.363  ok 
+    unseparated EoL upper-bound proxy, Mt            189.5140   printed      189.5  ok 
+    recoverable discard stock, Mt                     60.7662   printed      60.77  ok 
+    discard stock d_2019, kg/cap                       7.8123   printed       7.81  ok 
+    unrecycled residual, Mt                          202.5539   printed      202.6  ok 
+    recoverability upper bound                         0.9356   printed      0.936  ok 
+    recoverable share q                                0.3000   printed        0.3  ok 
+    recyclable base, kg/cap/yr                         1.3053   printed      1.305  ok 
+    mean in-use stock <u>, kg/cap                     25.6666   printed      25.67  ok 
+    mean throughput <s>, kg/cap/yr                     1.8846   printed      1.885  ok 
+    offset rho at gamma=0.003                          0.3450   printed      0.345  ok 
+
+  Copper, 2000-2010, from the Gloser et al. Sankey totals
+    gross usable supply S, Mt                        244.1000   printed      244.1  ok 
+    fabrication loss sigma                             0.1696   printed       0.17  ok 
+    depreciation lambda                                0.0262   printed     0.0262  ok 
+    durable share kappa                                0.9941   printed      0.994  ok 
+    unrecycled residual, Mt                           55.8208   printed       55.8  ok 
+    recoverable share q                                0.6270   printed       0.63  ok 
+    autonomous primary pbar, kg/cap/yr                 0.6220   printed      0.622  ok 
+    autonomous supply sbar, kg/cap/yr                  0.5992   printed      0.599  ok 
+    inventory term xibar, kg/cap/yr                   -0.0228   printed    -0.0228  ok 
+    recyclable base, kg/cap/yr                         1.9025   printed      1.902  ok 
+    landfill stock implied by 19.3 kg/cap, Mt        133.2347   printed        133  ok 
+    offset rho at gamma=0.002                          0.5877   printed      0.588  ok 
+
+   Table: energy requirement implied by observed flows
+------------------------------------------------------
+    Copper, 2000-2 Primary                           105.2735   printed      105.2  ok 
+    Copper, 2000-2 Recycling                           9.0811   printed        9.1  ok 
+    Copper, 2000-2 Fabrication                        10.1250   printed       10.1  ok 
+    Copper, 2000-2 Total                             124.4796   printed      124.4  ok 
+    Zinc, 1980-201 Primary                            52.4245   printed       52.4  ok 
+    Zinc, 1980-201 Recycling                           5.8167   printed        5.8  ok 
+    Zinc, 1980-201 Fabrication                         5.6538   printed        5.7  ok 
+    Zinc, 1980-201 Total                              63.8950   printed       63.9  ok 
+
+2. CALIBRATED STEADY STATES AND LOCAL STABILITY (Table 2)
+---------------------------------------------------------
+  Copper, gamma=0.002
+    s*                                                14.3467   printed      14.35  ok 
+    u*                                               326.9708   printed        327  ok 
+    d*                                               238.0507   printed      238.1  ok 
+    chi*                                               0.4842   printed      0.484  ok 
+    eigenvalue 1                                      -0.0154   printed    -0.0154  ok 
+    eigenvalue 2                                      -0.0028   printed   -0.00277  ok 
+    Gamma / Gamma_M                               2.3331 / 2.5866 
+    headroom 1 - Gamma/Gamma_M, %                      9.7999   printed        9.8  ok 
+    critical gamma at calibrated rho                   0.0060   printed      0.006  ok 
+      as a multiple of the calibrated gamma              3.02
+    closed form vs direct solve, max abs diff        2.27e-13
+    chi* + psi < 1                                     0.9582
+  Copper, gamma=0
+    s*                                                10.0512   printed      10.05  ok 
+    u*                                               229.0735   printed      229.1  ok 
+    d*                                               190.4169   printed      190.4  ok 
+    chi*                                               0.4664   printed      0.466  ok 
+    eigenvalue 1                                      -0.0100   printed      -0.01  ok 
+    eigenvalue 2                                      -0.0051   printed    -0.0051  ok 
+    Gamma / Gamma_M                               2.3519 / 2.7380 
+    headroom 1 - Gamma/Gamma_M, %                     14.1006   printed       14.1  ok 
+    closed form vs direct solve, max abs diff        5.68e-14
+    chi* + psi < 1                                     0.9404
+  Zinc, gamma=0.003
+    s*                                                 3.8291   printed      3.829  ok 
+    u*                                                65.0580   printed      65.06  ok 
+    d*                                                47.2369   printed      47.24  ok 
+    chi*                                               0.3186   printed      0.319  ok 
+    eigenvalue 1                                      -0.0222   printed    -0.0222  ok 
+    eigenvalue 2                                      -0.0058   printed   -0.00584  ok 
+    Gamma / Gamma_M                               3.0223 / 3.8276 
+    headroom 1 - Gamma/Gamma_M, %                     21.0374   printed         21  ok 
+    critical gamma at calibrated rho                   0.0192   printed      0.019  ok 
+      as a multiple of the calibrated gamma              6.40
+    closed form vs direct solve, max abs diff        5.68e-14
+    chi* + psi < 1                                     0.9316
+  Zinc, gamma=0
+    s*                                                 2.8873   printed       2.89  ok 
+    u*                                                49.0567   printed      49.06  ok 
+    d*                                                45.0319   printed      45.03  ok 
+    chi*                                               0.2963   printed      0.296  ok 
+    eigenvalue 1                                      -0.0134   printed    -0.0134  ok 
+    eigenvalue 2                                      -0.0100   printed      -0.01  ok 
+    Gamma / Gamma_M                               3.0526 / 4.2502 
+    headroom 1 - Gamma/Gamma_M, %                     28.1786   printed       28.2  ok 
+    closed form vs direct solve, max abs diff        7.11e-15
+    chi* + psi < 1                                     0.9093
+
+3. STEADY-STATE ENERGY REQUIREMENTS AND CRITICAL HORIZONS (Tables 3-4)
+----------------------------------------------------------------------
+  Fabrication energy charged on s* throughout.
+
+  Copper, gamma=0.002
+    s*                                                14.3467   printed      14.35  ok 
+    p*                                                 7.4224   printed      7.422  ok 
+    r*                                                 6.4713   printed      6.471  ok 
+    gamma d*                                           0.4761   printed      0.476  ok 
+    Omega*_NP                                        104.3325   printed      104.3  ok 
+    Omega*_0                                         453.1830   printed      453.2  ok 
+    T_E (bench, Ebar=1200)                            57.2238   printed       57.2  ok 
+    T_E (tight, Ebar=600)                             17.5631   printed       17.6  ok 
+  Copper, gamma=0
+    s*                                                10.0512   printed      10.05  ok 
+    p*                                                 5.3863   printed      5.386  ok 
+    r*                                                 4.6879   printed      4.688  ok 
+    gamma d*                                           0.0000   printed          0  ok 
+    Omega*_NP                                         67.6572   printed       67.7  ok 
+    Omega*_0                                         320.8124   printed      320.8  ok 
+    T_E (bench, Ebar=1200)                            74.9021   printed       74.9  ok 
+    T_E (tight, Ebar=600)                             37.1643   printed       37.2  ok 
+  Zinc, gamma=0.003
+    s*                                                 3.8291   printed      3.829  ok 
+    p*                                                 2.5862   printed      2.586  ok 
+    r*                                                 1.0782   printed      1.078  ok 
+    gamma d*                                           0.1417   printed      0.142  ok 
+    Omega*_NP                                         26.9760   printed         27  ok 
+    Omega*_0                                         123.9602   printed        124  ok 
+    T_E (bench, Ebar=300)                             51.7506   printed       51.8  ok 
+    T_E (tight, Ebar=150)                             11.8916   printed       11.9  ok 
+  Zinc, gamma=0
+    s*                                                 2.8873   printed      2.887  ok 
+    p*                                                 2.0089   printed      2.009  ok 
+    r*                                                 0.8554   printed      0.855  ok 
+    gamma d*                                           0.0000   printed          0  ok 
+    Omega*_NP                                         18.9267   printed       18.9  ok 
+    Omega*_0                                          94.2616   printed       94.3  ok 
+    T_E (bench, Ebar=300)                             65.8336   printed       65.8  ok 
+    T_E (tight, Ebar=150)                             27.6907   printed       27.7  ok 
+
+   Energy insights (Section 4.2, Introduction, Conclusion, Appendix A)
+----------------------------------------------------------------------
+  Copper, gamma=0.002
+    circularity chi*, %                               48.4248   printed         48  ok 
+    primary share of Omega*, %                        76.9778   printed         77  ok 
+    s* x 10 billion, Mt/yr                           143.4673   printed        144  ok 
+    sbar / s*, %                                       4.1752   printed        4.2  ok 
+    pbar / p*, %                                       8.3801   printed        8.4  ok 
+    benchmark headroom Ebar/Omega*                     2.6479   printed       2.65  ok 
+    T_E at common headroom 2.65                       57.2664   printed       57.3  ok 
+    Omega*(2100), MJ/cap/yr                         1636.8139   printed       1637  ok 
+    (1-chi*) s* = p* + xi_bar                          7.3994   printed      7.399  ok 
+      p* + xi_bar (identity check)                     7.3994
+  Copper, gamma=0
+    circularity chi*, %                               46.6405   printed       46.6  ok 
+    primary share of Omega*, %                        78.9107   printed       78.9  ok 
+    s* x 10 billion, Mt/yr                           100.5122   printed        100  ok 
+    sbar / s*, %                                       5.9595   printed          6  ok 
+    pbar / p*, %                                      11.5479   printed       11.5  ok 
+  Zinc, gamma=0.003
+    circularity chi*, %                               31.8577   printed         32  ok 
+    primary share of Omega*, %                        78.2382   printed       78.2  ok 
+    s* x 10 billion, Mt/yr                            38.2911   printed       38.3  ok 
+    sbar / s*, %                                       6.8423   printed        6.8  ok 
+    pbar / p*, %                                       9.2412   printed        9.2  ok 
+    benchmark headroom Ebar/Omega*                     2.4201   printed       2.42  ok 
+    T_E at common headroom 2.65                       56.7142   printed       56.7  ok 
+    Omega*(2100), MJ/cap/yr                          453.0222   printed        453  ok 
+    (1-chi*) s* = p* + xi_bar                          2.6092   printed       2.61  ok 
+      p* + xi_bar (identity check)                     2.6092
+  Zinc, gamma=0
+    circularity chi*, %                               29.6259   printed       29.6  ok 
+    primary share of Omega*, %                        79.9211   printed       79.9  ok 
+    s* x 10 billion, Mt/yr                            28.8732   printed         29  ok 
+    sbar / s*, %                                       9.0741   printed        9.1  ok 
+    pbar / p*, %                                      11.8969   printed       11.9  ok 
+    Omega*_Cu / Omega*_Zn (equal-headroom budget ratio)       3.6559   printed       3.66  ok 
+    Omega*(2100) Cu + Zn as share of industrial energy       0.1007   printed        0.1  ok 
+
+4. SENSITIVITY TO THE PRIMARY-SUPPLY SLOPE (Appendix A)
+-------------------------------------------------------
+  perturbations applied to the rounded point estimates of Table 1,
+  which is how the printed band was constructed.
+
+  Copper, gamma=0.002   psi_crit = 1 - chi* = 0.516
+    psi = 0.427: s*                                    6.7189   printed       6.72  ok 
+    psi = 0.427: u*                                  153.1275   printed      153.1  ok 
+    psi = 0.427: d*                                  111.4843   printed      111.5  ok 
+    psi = 0.427: 1-psi-chi*                            0.0892   printed      0.089  ok 
+    psi = 0.427: eigenvalues                            (-0.0161, -0.0051)
+    psi = 0.474: s*                                   14.3467   printed      14.35  ok 
+    psi = 0.474: u*                                  326.9708   printed        327  ok 
+    psi = 0.474: d*                                  238.0507   printed      238.1  ok 
+    psi = 0.474: 1-psi-chi*                            0.0418   printed      0.042  ok 
+    psi = 0.474: eigenvalues                            (-0.0154, -0.0028)
+    psi = 0.521: psi > psi_crit, no positive steady state        ok
+    psi = 0.521: 1-psi-chi*                           -0.0056   printed     -0.006  ok 
+  Copper, gamma=0   psi_crit = 1 - chi* = 0.534
+    psi = 0.427: s*                                    5.5984   printed        5.6  ok 
+    psi = 0.427: u*                                  127.5911   printed      127.6  ok 
+    psi = 0.427: d*                                  106.0598   printed      106.1  ok 
+    psi = 0.427: 1-psi-chi*                            0.1070   printed      0.107  ok 
+    psi = 0.427: eigenvalues                            (-0.0100, -0.0082)
+    psi = 0.474: s*                                   10.0512   printed      10.05  ok 
+    psi = 0.474: u*                                  229.0735   printed      229.1  ok 
+    psi = 0.474: d*                                  190.4169   printed      190.4  ok 
+    psi = 0.474: 1-psi-chi*                            0.0596   printed       0.06  ok 
+    psi = 0.474: eigenvalues                            (-0.0100, -0.0051)
+    psi = 0.521: s*                                   49.1196   printed      49.12  ok 
+    psi = 0.521: u*                                 1119.4646   printed       1120  ok 
+    psi = 0.521: d*                                  930.5526   printed      930.6  ok 
+    psi = 0.521: 1-psi-chi*                            0.0122   printed      0.012  ok 
+    psi = 0.521: eigenvalues                            (-0.0100, -0.0012)
+  Zinc, gamma=0.003   psi_crit = 1 - chi* = 0.681
+    psi = 0.552: s*                                    2.0197   printed       2.02  ok 
+    psi = 0.552: u*                                   34.3152   printed       34.3  ok 
+    psi = 0.552: d*                                   24.9154   printed       24.9  ok 
+    psi = 0.552: 1-psi-chi*                            0.1297   printed       0.13  ok 
+    psi = 0.552: eigenvalues                            (-0.0249, -0.0083)
+    psi = 0.613: s*                                    3.8291   printed       3.83  ok 
+    psi = 0.613: u*                                   65.0580   printed       65.1  ok 
+    psi = 0.613: d*                                   47.2369   printed       47.2  ok 
+    psi = 0.613: 1-psi-chi*                            0.0684   printed      0.068  ok 
+    psi = 0.613: eigenvalues                            (-0.0222, -0.0058)
+    psi = 0.674: s*                                   36.7812   printed      36.78  ok 
+    psi = 0.674: u*                                  624.9271   printed      624.9  ok 
+    psi = 0.674: d*                                  453.7428   printed      453.7  ok 
+    psi = 0.674: 1-psi-chi*                            0.0071   printed      0.007  ok 
+    psi = 0.674: eigenvalues                            (-0.0197, -0.0008)
+  Zinc, gamma=0   psi_crit = 1 - chi* = 0.704
+    psi = 0.552: s*                                    1.7232   printed       1.72  ok 
+    psi = 0.552: u*                                   29.2781   printed       29.3  ok 
+    psi = 0.552: d*                                   26.8760   printed       26.9  ok 
+    psi = 0.552: 1-psi-chi*                            0.1520   printed      0.152  ok 
+    psi = 0.552: eigenvalues                            (-0.0188, -0.0100)
+    psi = 0.613: s*                                    2.8873   printed       2.89  ok 
+    psi = 0.613: u*                                   49.0567   printed       49.1  ok 
+    psi = 0.613: d*                                   45.0319   printed         45  ok 
+    psi = 0.613: 1-psi-chi*                            0.0907   printed      0.091  ok 
+    psi = 0.613: eigenvalues                            (-0.0134, -0.0100)
+    psi = 0.674: s*                                    8.8990   printed        8.9  ok 
+    psi = 0.674: u*                                  151.1976   printed      151.2  ok 
+    psi = 0.674: d*                                  138.7928   printed      138.8  ok 
+    psi = 0.674: 1-psi-chi*                            0.0294   printed      0.029  ok 
+    psi = 0.674: eigenvalues                            (-0.0100, -0.0054)
+
+5. CAPITAL-MATERIAL EXTENSION: STRUCTURAL IDENTITIES (Section 6)
+----------------------------------------------------------------
+  illustrative technology: alpha=0.35, nu=0.05, vartheta=0.6, delta_K=0.05, iota=0.25, b_P=0.16
+
+  Copper, gamma=0.002:  k*=8.1431  s*=1.1363  chi*=0.4842
+    a_1, a_2, a_3 from J                         0.071949, 1.5244e-03, 9.2600e-06
+    a_1, a_2, a_3 from the decomposition         0.071949, 1.5244e-03, 9.2600e-06
+    Pi_M closed form (1-chi*) identity           2.489251e-04  vs 2.489251e-04  ok
+    G_M closed form                              1.913095e-07  vs 1.913095e-07  ok
+    a_3 = (1-alpha-vt.nu)(n+delta_K) Pi_M        9.260013e-06  vs 9.260013e-06  ok
+    second leading principal minor, two forms    8.237222e-04  vs 8.237222e-04  ok
+    i_k < 0 (structurally negative)                 -0.037969
+    tau_M, and its five-term decomposition           0.033980   sum 0.033980  ok
+    separating rate gbar vs material rates mu        0.013044   mu=(0.010686, 0.023294)  separated -> roots real for every (i_k, f_k)
+    i_k values admitting a complex pair (of 700)            0   (exact boundary: critical values of R)
+    tau_M^2 - 4 Pi_M >= 0 (M is Metzler)           1.5897e-04   tau_M=0.03398 vs 2 sqrt(Pi_M)=0.03155
+    tau_M >= 2n (parameter ranges alone)             0.020000   dilution=0.02000, durability_loss=0.00016, uncollected_eol=0.01192, unrecoverable_discard=0.00074, fabricated_out=0.00116
+    Routh-Hurwitz satisfied                              True
+    complex pair present                                False
+    eigenvalues                                  [-0.038833 -0.022533 -0.010582]
+    a_3=0 at vartheta*nu=0.03 (Schur identity)       0.970000   = 1 - vartheta*nu  ok
+    a_3=0 in i_k terms: -G_M/Pi_M                  -7.685e-04
+    regime code (see mm_growth.REGIME_NAMES)                0   stable, monotone
+    Hopf boundary: max tau_M, at i_k                2.200e-04   at -0.0332  (tau_M is 154x larger)
+    Hopf exists only for i_k < -G_M/F_M              -0.01304
+  Zinc, gamma=0.003:  k*=7.9552  s*=0.8480  chi*=0.3186
+    a_1, a_2, a_3 from J                         0.086952, 2.2905e-03, 1.6683e-05
+    a_1, a_2, a_3 from the decomposition         0.086952, 2.2905e-03, 1.6683e-05
+    Pi_M closed form (1-chi*) identity           4.484744e-04  vs 4.484744e-04  ok
+    G_M closed form                              2.209662e-07  vs 2.209662e-07  ok
+    a_3 = (1-alpha-vt.nu)(n+delta_K) Pi_M        1.668325e-05  vs 1.668325e-05  ok
+    second leading principal minor, two forms    1.356398e-03  vs 1.356398e-03  ok
+    i_k < 0 (structurally negative)                 -0.037693
+    tau_M, and its five-term decomposition           0.049259   sum 0.049259  ok
+    separating rate gbar vs material rates mu        0.015037   mu=(0.012054, 0.037205)  separated -> roots real for every (i_k, f_k)
+    i_k values admitting a complex pair (of 700)            0   (exact boundary: critical values of R)
+    tau_M^2 - 4 Pi_M >= 0 (M is Metzler)           6.3257e-04   tau_M=0.04926 vs 2 sqrt(Pi_M)=0.04235
+    tau_M >= 2n (parameter ranges alone)             0.020000   dilution=0.02000, durability_loss=0.00064, uncollected_eol=0.02573, unrecoverable_discard=0.00210, fabricated_out=0.00079
+    Routh-Hurwitz satisfied                              True
+    complex pair present                                False
+    eigenvalues                                  [-0.041088 -0.033879 -0.011985]
+    a_3=0 at vartheta*nu=0.03 (Schur identity)       0.970000   = 1 - vartheta*nu  ok
+    a_3=0 in i_k terms: -G_M/Pi_M                  -4.927e-04
+    regime code (see mm_growth.REGIME_NAMES)                0   stable, monotone
+    Hopf boundary: max tau_M, at i_k                1.798e-04   at -0.0408  (tau_M is 274x larger)
+    Hopf exists only for i_k < -G_M/F_M              -0.01504
+
+   Balanced growth on the knife edge alpha + vartheta nu = 1
+------------------------------------------------------------
+  AK-like configuration alpha=0.95, nu=0.05, vartheta=1.0, iota=0.107
+  Copper, gamma=0.002: g_k*=0.02078  chi(0)=0.4842  chi(vt g_k)=0.3317
+    detrended trace, determinant                 -0.076583, 1.4228e-03  (stable: True)
+    dg_k/dz for z in rho, gamma, kappa, q        0.00311, 0.02406, 0.00136, 0.00008
+  Zinc, gamma=0.003: g_k*=0.02015  chi(0)=0.3186  chi(vt g_k)=0.2272
+    detrended trace, determinant                 -0.090271, 1.8735e-03  (stable: True)
+    dg_k/dz for z in rho, gamma, kappa, q        0.00312, 0.01727, 0.00084, 0.00019
+
+   Comparative statics at the stationary regime
+-----------------------------------------------
+  Copper, gamma=0.002: dlnk*/dchi*=0.1564, dlns*/dchi*=2.0327
+    dln s*/dz: rho=1.3956, q=0.1071, kappa=0.7708, gamma=28.1071, sigma=0.3600
+  Zinc, gamma=0.003: dlnk*/dchi*=0.1183, dlns*/dchi*=1.5385
+    dln s*/dz: rho=1.1687, q=0.1898, kappa=0.3893, gamma=14.5997, sigma=0.1345
+
+6. INTENSITY-SUSTAINABLE OPTIMUM AT COPPER PARAMETERS (Appendix B)
+------------------------------------------------------------------
+    g_A                                                0.0085   printed     0.0085  ok 
+    g_P                                                0.0260   printed      0.026  ok 
+    effective discount rate rho_e                      0.0450   printed      0.045  ok 
+    B_U(g_I), years                                   16.1137   printed       16.1  ok 
+    B_D(g_I), years                                    5.6928   printed       5.69  ok 
+    chi_I(g_I)                                         0.3596   printed       0.36  ok 
+    primary share 1 - chi_I                            0.6404   printed       0.64  ok 
+
+    stationary residual: 5.55e-17
+    b_P*                                               0.1582   printed      0.158  ok 
+    l_P*                                               0.0681   printed      0.068  ok 
+    c/y                                                0.7401   printed       0.74  ok 
+    k/y                                                3.4648   printed       3.46  ok 
+    I_S*                                               0.1593   printed      0.159  ok 
+    I_U*                                               2.5670   printed       2.57  ok 
+    I_D*                                               0.9069   printed       0.91  ok 
+    I_P*                                               0.1020   printed      0.102  ok 
+    K_1                                               -0.0161   printed    -0.0161  ok 
+    K_2                                                0.0001   printed   6.99e-05  ok 
+    K_3 = det J_6                                     -0.0000   printed  -8.05e-08  ok 
+    eigenvalue 1                                      -0.0790   printed     -0.079  ok 
+    eigenvalue 2                                      -0.0479   printed    -0.0479  ok 
+    eigenvalue 3                                      -0.0260   printed     -0.026  ok 
+    eigenvalue 4                                       0.0710   printed      0.071  ok 
+    eigenvalue 5                                       0.0929   printed     0.0929  ok 
+    eigenvalue 6                                       0.1240   printed      0.124  ok 
+    trace J_6 = 3 rho_e                              0.135000   printed      0.135  ok
+    pairing identities c_1, c_3, c_5             max abs error 5.72e-11
+    all omega inside the region D                        True
+    half-life of the slowest stable mode, yr          26.6340   printed         27  ok 
+
+    stock-dependent welfare weights scaled tenfold:
+    b_P*                                               0.3206   printed      0.321  ok 
+    l_P*                                               0.1551   printed      0.155  ok 
+    half-life, yr                                     26.8560   printed         27  ok 
+    omega                                        [-0.0104  -0.00392 -0.00183]
+
+7. ENDOGENOUS RECOVERY CAPACITY AND THE CIRCULARITY TRAP (Appendix B)
+---------------------------------------------------------------------
+  linear corner (b_R = l_R = 0, rho = 0):
+    b_P                                                0.1947   printed      0.195  ok 
+    l_P                                                0.0860   printed      0.086  ok 
+    K_1                                               -0.0155   printed    -0.0155  ok 
+    K_2                                                0.0001   printed   6.92e-05  ok 
+    K_3                                               -0.0000   printed   -8.2e-08  ok 
+    omega                                        [-0.00859 -0.00506 -0.00189]   printed [-0.0086 -0.0051 -0.0019]
+    half-life, yr                                     26.2271   printed         26  ok 
+
+  interior circular configuration (saturated branch):
+    inflection scale                                   0.0462   printed      0.046  ok 
+    b_P*                                               0.1452   printed      0.145  ok 
+    l_P*                                               0.0645   printed      0.065  ok 
+    b_R*                                               0.0593   printed      0.059  ok 
+    l_R*                                               0.0263   printed      0.026  ok 
+    m_R*                                               0.1159   printed      0.116  ok 
+    rho(m_R*)                                          0.6097   printed       0.61  ok 
+    K_1                                               -0.0150   printed     -0.015  ok 
+    K_2                                                0.0001   printed   6.01e-05  ok 
+    K_3                                               -0.0000   printed  -6.33e-08  ok 
+    omega                                        [-0.00929 -0.00406 -0.00168]   printed [-0.0093 -0.0041 -0.0017]
+    half-life, yr                                     28.6129   printed         29  ok 
+    allocation Hessian negative definite                 True   printed True    ok
+
+  middle configuration (locally-increasing-returns branch):
+    m_R* vs inflection scale                          0.01671   below 0.0462
+    rho(m_R*), b_R*, l_R*                        0.0376, 0.00863, 0.00382
+    allocation Hessian negative definite                False   (fails, as expected)
+
+    saddle-node in the half-saturation scale     0.1421   printed 0.142 - 0.1425  ok
+    as a multiple of the baseline scale                  1.78   printed roughly 1.8
+
+SUMMARY
+-------
+  every printed value reproduced within tolerance.

@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+
+# Python bytecode and environments
+__pycache__/
+*.py[cod]
+.venv/
+.ipynb_checkpoints/
+
+# PNG previews written by mm_figures alongside each PDF
+figures/*.png
+
+# LaTeX build by-products, should a .tex file be added later
+*.aux
+*.log
+*.synctex.gz
+
+# ILZSG-derived zinc data: copyright, not redistributable
+zinc_dataset*.xlsx

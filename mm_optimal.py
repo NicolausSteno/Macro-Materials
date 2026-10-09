@@ -1,7 +1,7 @@
 """
 mm_optimal.py
 =============
-The optimal-growth block of Chapter 1: the intensity-sustainable planner problem
+The optimal-growth block of Chapter 2: the intensity-sustainable planner problem
 of Section 6.6, its detrended canonical state-costate system, the cubic
 criterion of Appendix B and the two extensions (imperfect substitutability pi,
 endogenous recovery capacity rho).

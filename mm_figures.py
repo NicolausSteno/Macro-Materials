@@ -1,7 +1,7 @@
 """
 mm_figures.py
 =============
-All figures for Chapter 1 except the TikZ stock-flow diagram (fig_system.tex).
+All figures for Chapter 2
 
 Every figure is built from the analytic expressions and the calibrated
 parameters in mm_core / mm_growth / mm_optimal, so nothing here is drawn by

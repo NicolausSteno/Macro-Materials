@@ -1,5 +1,5 @@
 ==============================================================================
-Chapter 1 - A Macro Materials Framework: full numerical reproduction
+Chapter 2 - A Macro Materials Framework: full numerical reproduction
 ==============================================================================
 
 1. CALIBRATION RECONSTRUCTED FROM SOURCE DATA (Appendix A)

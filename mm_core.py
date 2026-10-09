@@ -1,7 +1,7 @@
 """
 mm_core.py
 ==========
-Baseline two-stock macro-materials model of Chapter 1 (Sections 2-3).
+Baseline two-stock macro-materials model of Chapter 2 (Sections 2-3).
 
 Implements, in closed form and by direct linear solution:
 

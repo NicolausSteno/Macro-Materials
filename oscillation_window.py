@@ -1,7 +1,7 @@
 """
 oscillation_window.py
 =====================
-The oscillation criteria of Subsection 2.5.3 (local stability), in closed form.
+The oscillation criteria of Chapter 2, Subsection 2.5.3 (local stability), in closed form.
 
 Adds two objects to the analysis already implemented in mm_growth:
 

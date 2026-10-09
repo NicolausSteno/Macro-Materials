@@ -1,7 +1,7 @@
 """
 mm_calibration.py
 =================
-Reconstruction of the calibrated parameters of Chapter 1 from source data.
+Reconstruction of the calibrated parameters of Chapter 2 from source data.
 
 Zinc  : rebuilt annually from `zinc_dataset.xlsx` (or the legacy
         `zinc_dataset_ORIGINAL.xlsx`), the reconstruction of

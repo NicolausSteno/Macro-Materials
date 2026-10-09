@@ -1,7 +1,7 @@
 """
 run_all.py
 ==========
-Reproduces every number in Chapter 1 and its two appendices, checks each
+Reproduces every number in Chapter 2 and its two appendices, checks each
 against the value printed in the LaTeX source, and rebuilds all figures.
 
     python run_all.py            # tables + checks + figures

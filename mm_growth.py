@@ -1,7 +1,7 @@
 """
 mm_growth.py
 ============
-The fixed-saving capital-material extension of Chapter 1, Section 6.
+The fixed-saving capital-material extension of Chapter 2, Section 6.
 
 Implements and verifies:
   * the stationary capital stock k*                (eq. ext_kstar)

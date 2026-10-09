@@ -18,3 +18,9 @@ figures/*.png
 
 # ILZSG-derived zinc data: copyright, not redistributable
 zinc_dataset*.xlsx
+
+# Figure outputs. mm_figures.py writes all eight figures to figures/; the four
+# used by the thesis are published as the ch1_*.pdf copies in the root. The
+# other root copies (fig_*.pdf) are not used by Chapter 2 or its appendices.
+figures/
+/fig_*.pdf

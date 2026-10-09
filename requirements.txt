@@ -1,0 +1,8 @@
+# Chapter 2 (Macro-Materials): versions with which run_all.py was last
+# verified, on Python 3.12.7. openpyxl is needed only for the zinc
+# reconstruction, which runs when zinc_dataset_ORIGINAL.xlsx is present.
+numpy==2.4.1
+scipy==1.17.0
+pandas==2.3.3
+matplotlib==3.10.8
+openpyxl==3.1.5

@@ -1,7 +1,7 @@
 # Chapter 2 — numerical reproduction and figures
 
-Python scripts that recompute every number in `ch1_macro_materials.tex`,
-`app_ch1_calibration_details.tex` and `app_ch1_trans_dyn.tex` from the source
+Python scripts that recompute every number in Chapter 2,
+Appendix A and Appendix B from the source
 data and the model equations, check each against the value printed in the
 LaTeX, and build the figures.
 

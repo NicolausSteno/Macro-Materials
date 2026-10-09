@@ -6,6 +6,7 @@ __pycache__/
 *.py[cod]
 .venv/
 .ipynb_checkpoints/
+kappa_edits.md
 
 # PNG previews written by mm_figures alongside each PDF
 figures/*.png
